@@ -10,7 +10,7 @@ License: BSD 2-Clause
 URL:     https://github.com/elves/elvish
 Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
 BuildRequires: golang-bin
-BuildRequires: golang-googlecode-tools-stringer
+BuildRequires: golang-x-tools-stringer
 Obsoletes: golang-github-elves-elvish
 
 %description
