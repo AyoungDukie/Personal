@@ -13,6 +13,9 @@ BuildRequires: golang-bin
 BuildRequires: golang-x-tools-stringer
 BuildRequires: git
 
+# I would like to thank the Fedora Chinese Community (FZUG) and their work on the spec file (https://github.com/FZUG/repo/blob/master/rpms/elvish/elvish.spec)
+# which formed the basis of this file. More info can be found at http://zh.fedoracommunity.org/repo/
+
 %description
 Elvish aims to explore the potentials of the Unix shell. It is a work in progress; things will change without warning. 
 
