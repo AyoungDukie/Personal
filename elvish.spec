@@ -11,7 +11,7 @@ URL:     https://github.com/elves/elvish
 Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
 BuildRequires: golang-bin
 BuildRequires: golang-x-tools-stringer
-Obsoletes: golang-github-elves-elvish
+BuildRequires: git
 
 %description
 Elvish aims to explore the potentials of the Unix shell. It is a work in progress; things will change without warning. 
