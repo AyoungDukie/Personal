@@ -21,11 +21,11 @@ Keeping your system up to date mostly involves invoking more than a single packa
 %build
 mkdir -p ./_build/src/github.com/r-darwish
 ln -s $(pwd) ./_build/src/github.com/r-darwish/%{name}
-cargo run --release
+cargo build --release
 #make generate
 
 %install
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/target/release/
 
 %files
 %defattr(-,root,root,-)
