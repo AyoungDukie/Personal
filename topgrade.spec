@@ -25,7 +25,7 @@ cargo build --release
 #make generate
 
 %install
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/target/release/
+install -Dm 0755 %{name} ./target/release/
 
 %files
 %defattr(-,root,root,-)
