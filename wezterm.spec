@@ -9,8 +9,8 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
 Source0: https://github.com/wez/wezterm/archive/%{version}/topgrade-v%{version}.tar.gz
-BuildRequires: rust
-BuildRequires: cargo
+BuildRequires: rust,cargo,make,gcc,gcc-c++,fontconfig-devel,openssl-devel,perl-interpreter,python3,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libegl-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,rpm-build,redhat-lsb-core
+Requires: dbus,fontconfig,libx11,libxkbcommon-x11,wayland,xcb-util-keysyms,xcb-util-wm
 
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
