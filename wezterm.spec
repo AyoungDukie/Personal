@@ -1,9 +1,11 @@
 %global debug_package %{nil}
 
 Name:    wezterm
-Version: 20210314-114017-04b7cedd
+Version: 20210314.114017.04b7cedd
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+
+%define version $(echo "$(tr '.' '-' <<< %{version})")
 
 Group:   System Environment/Shells
 License: MIT
@@ -16,6 +18,7 @@ Requires: dbus,fontconfig,libx11,libxkbcommon-x11,wayland,xcb-util-keysyms,xcb-u
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 %prep
+
 %setup -q -n %{name}-%{version}
 
 %build
@@ -34,5 +37,5 @@ install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
-* Mon Mar 8 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210314-114017-04b7cedd-1
-- Initial with wezterm 20210314-114017-04b7cedd
+* Mon Mar 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
+- Initial with wezterm %{version}
