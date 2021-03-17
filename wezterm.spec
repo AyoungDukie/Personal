@@ -6,7 +6,7 @@ Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 # %define vtag $(echo "$(tr '.' '-' <<< %{version})")
-%define vtag %(echo "$( sed 's/.*= //' <<< "appVersion = 1.2" )")
+%define vtag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314-114017-04b7cedd" )")
 
 Group:   System Environment/Shells
 License: MIT
