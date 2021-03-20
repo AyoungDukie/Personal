@@ -7,14 +7,14 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 
 # %define vtag $(echo "$(tr '.' '-' <<< %{version})")
 %define vtag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314-114017-04b7cedd" )")
-%define dltag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314_114017_04b7cedd" )")
-%define Version %{vtag}
+# %define dltag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314_114017_04b7cedd" )")
+# %define Version %{vtag}
 
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
 Source0: https://github.com/wez/wezterm/archive/%{vtag}/wezterm-%{vtag}.tar.gz
-BuildRequires: rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libegl-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,rpm-build,redhat-lsb-core
+BuildRequires: rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
 Requires: openssl
 
 %description
