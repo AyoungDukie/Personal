@@ -26,11 +26,11 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %build
 mkdir -p ./_build/src/github.com/wez
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
-# cargo build --release
+cargo build --release
 # make generate
 
 %install
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 # dnf install -y %{source0}
 
 %files
