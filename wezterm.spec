@@ -13,7 +13,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
-Source0: https://github.com/wez/wezterm/releases/download/%{version}/wezterm-%{dltag}-1.fc33.x86_64.rpm
+Source0: https://github.com/wez/wezterm/releases/download/%{vtag}/wezterm-%{dltag}-1.fc33.x86_64.rpm
 
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
