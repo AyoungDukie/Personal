@@ -39,5 +39,5 @@ install -Dm 0755 ./%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
-* Sat Mar 20 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
-- Initial with wezterm %{version}
+* Sat Mar 20 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210314-114017-04b7cedd-1
+- Initial with wezterm 20210314-114017-04b7cedd
