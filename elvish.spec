@@ -9,9 +9,7 @@ Group:   System Environment/Shells
 License: BSD 2-Clause
 URL:     https://github.com/elves/elvish
 Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
-BuildRequires: golang-bin
-BuildRequires: golang-x-tools-stringer
-BuildRequires: git
+BuildRequires: git,golang-bin,golang-x-tools-stringer
 
 # I would like to thank the Fedora Chinese Community (FZUG) and their work on the spec file (https://github.com/FZUG/repo/blob/master/rpms/elvish/elvish.spec)
 # which formed the basis of this file. More info can be found at http://zh.fedoracommunity.org/repo/
