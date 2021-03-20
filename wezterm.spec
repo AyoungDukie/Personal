@@ -29,7 +29,7 @@ ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 # make generate
 
 %install
-install -Dm 0755 ./%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 # dnf install -y %{source0}
 
 %files
