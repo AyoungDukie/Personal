@@ -37,5 +37,5 @@ dnf install -y %{source0}
 %{_bindir}/%{name}
 
 %changelog
-* Mon Mar 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
+* Mon Mar 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{vtag}-1
 - Initial with wezterm %{vtag}
