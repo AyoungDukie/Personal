@@ -14,7 +14,7 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
 Source0: https://github.com/wez/wezterm/archive/%{vtag}/wezterm-%{vtag}.tar.gz
-BuildRequires: rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
+BuildRequires: rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,perl-core,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
 Requires: openssl
 
 %description
