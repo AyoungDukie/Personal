@@ -9,8 +9,7 @@ Group:   System Environment/Shells
 License: GPLv3
 URL:     https://github.com/r-darwish/topgrade
 Source0: https://github.com/r-darwish/topgrade/archive/v%{version}/topgrade-v%{version}.tar.gz
-BuildRequires: rust
-BuildRequires: cargo
+BuildRequires: rust,cargo
 
 %description
 Keeping your system up to date mostly involves invoking more than a single package manager. This usually results in big shell one-liners saved in your shell history. Topgrade tries to solve this problem by detecting which tools you use and run their appropriate package managers. 
