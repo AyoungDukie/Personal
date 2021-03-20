@@ -20,7 +20,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 
 %prep
 
-%setup -q -n %{name}-%{vtag}
+%setup -q -n %{name}-%{version}
 
 %build
 mkdir -p ./_build/src/github.com/wez
