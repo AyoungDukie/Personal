@@ -7,11 +7,13 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 
 # %define vtag $(echo "$(tr '.' '-' <<< %{version})")
 %define vtag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314-114017-04b7cedd" )")
+%define dltag %(echo "$( sed 's/.*= //' <<< "appVersion = 20210314_114017_04b7cedd" )")
+
 
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
-Source0: https://github.com/wez/wezterm/releases/%{vtag}/wezterm-%{vtag}-1.fc33.x86.rpm
+Source0: https://github.com/wez/wezterm/releases/download/%{vtag}/wezterm-%{dltag}-1.fc33.x86_64.rpm
 
 %description
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
@@ -37,5 +39,5 @@ dnf install -y %{source0}
 %{_bindir}/%{name}
 
 %changelog
-* Mon Mar 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{vtag}-1
+* Sat Mar 20 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{vtag}-1
 - Initial with wezterm %{vtag}
