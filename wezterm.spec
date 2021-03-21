@@ -28,6 +28,9 @@ cargo build --release
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/%{name}
 
 %files
 %defattr(-,root,root,-)
