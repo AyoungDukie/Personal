@@ -8,7 +8,7 @@ Summary: croc - secure and easy data transfer
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/schollz/croc
-Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
+# Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
 BuildRequires: golang-bin
 
 # I would like to thank the Fedora Chinese Community (FZUG) and their work on the spec file (https://github.com/FZUG/repo/blob/master/rpms/elvish/elvish.spec)
