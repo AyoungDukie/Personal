@@ -26,11 +26,15 @@ mkdir -p ./_build/src/github.com/wez
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
 
+%pre
+cp ./assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
+
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/%{name}
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications org.wezfurlong.wezterm.desktop
 
 %files
 %defattr(-,root,root,-)
