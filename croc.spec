@@ -9,7 +9,7 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/schollz/%{name}
 Source0: https://github.com/schollz/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
-BuildRequires: golang-bin
+BuildRequires: git,golang-bin
 
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
