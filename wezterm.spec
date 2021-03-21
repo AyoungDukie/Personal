@@ -28,6 +28,8 @@ cargo build --release
 
 %pre
 cp ./assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
+cp ./assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
+cp ./assets/icon/terminal.png ./org.wezfurlong.wezterm.png
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
@@ -37,6 +39,8 @@ install -Dm 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/%{na
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications org.wezfurlong.wezterm.desktop
 
 %files
+/usr/share/icons/hicolor/128x128/apps org.wezfurlong.wezterm.png
+/usr/share/metainfo/ org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE.md
