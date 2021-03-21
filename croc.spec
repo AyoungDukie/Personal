@@ -7,12 +7,9 @@ Summary: croc - secure and easy data transfer
 
 Group:   System Environment/Shells
 License: MIT
-URL:     https://github.com/schollz/croc
-# Source0: https://github.com/elves/elvish/archive/v%{version}/elvish-v%{version}.tar.gz
+URL:     https://github.com/schollz/%{name}
+Source0: https://github.com/schollz/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildRequires: golang-bin
-
-# I would like to thank the Fedora Chinese Community (FZUG) and their work on the spec file (https://github.com/FZUG/repo/blob/master/rpms/elvish/elvish.spec)
-# which formed the basis of this file. More info can be found at http://zh.fedoracommunity.org/repo/
 
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
