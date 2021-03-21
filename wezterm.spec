@@ -13,7 +13,7 @@ Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multip
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
-Source0: https://github.com/wez/wezterm/archive/%{vtag}/wezterm-%{vtag}.tar.gz
+Source0: https://github.com/wez/wezterm/releases/download/%{vtag}/wezterm-%{vtag}-src.tar.gz
 BuildRequires: git,rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,perl-core,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
 Requires: openssl
 
@@ -27,7 +27,6 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %build
 mkdir -p ./_build/src/github.com/wez
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
-git submodule update --init --recursive
 cargo build --release
 # make generate
 
