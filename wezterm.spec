@@ -14,7 +14,7 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/wezterm
 Source0: https://github.com/wez/wezterm/archive/%{vtag}/wezterm-%{vtag}.tar.gz
-BuildRequires: freetype,rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,perl-core,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
+BuildRequires: git,rust,cargo,fontconfig-devel,openssl-devel,perl-interpreter,perl-core,libxcb-devel,libxkbcommon-devel,libxkbcommon-x11-devel,wayland-devel,mesa-libEGL-devel,xcb-util-keysyms-devel,xcb-util-image-devel,xcb-util-wm-devel,redhat-lsb-core
 Requires: openssl
 
 %description
@@ -23,6 +23,9 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %prep
 
 %setup -q -n %{name}-%{vtag}
+
+%pre
+git submodule update --init --recursive
 
 %build
 mkdir -p ./_build/src/github.com/wez
