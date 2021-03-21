@@ -22,7 +22,6 @@ mkdir -p ./_build/src/github.com/schollz
 ln -s $(pwd) ./_build/src/github.com/schollz/%{name}
 export GOPATH=$(pwd)/_build:%{gopath}
 go build -o %{name}
-# GO111MODULE=on go get -v github.com/schollz/croc/v8
 
 %install
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
