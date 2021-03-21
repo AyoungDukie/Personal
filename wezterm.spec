@@ -37,7 +37,7 @@ install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 %files
 %defattr(-,root,root,-)
 %doc README.md
-%license LICENSE
+%license LICENSE.md
 %{_bindir}/%{name}
 
 %changelog
