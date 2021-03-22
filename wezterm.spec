@@ -39,10 +39,10 @@ cp ./assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 # place .desktop and additional binary files
-cp ./assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
 cp ./target/release/%{name}-gui %{buildroot}/usr/bin/%{name}-gui
 cp ./target/release/%{name}-mux-server %{buildroot}/usr/bin/%{name}-mux-server
 cp ./target/release/strip-ansi-escapes/usr/bin/strip-ansi-escapes
+cp ./assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
 
 %files
 /usr/bin/%{name}-gui
