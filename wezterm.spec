@@ -27,24 +27,30 @@ ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
 
 %pre
+mkdir -p %{buildroot}/etc/profile.d
+mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
+mkdir -p %{buildroot}/usr/share/applications
+# prepare desktop and icon files
 cp ./assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 cp ./assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
-cp ./assets/icon/terminal.png ./org.wezfurlong.wezterm.png
-cp ./assets/shell-integration/wezterm.sh ./wezterm.sh
+# place additional asset files
+cp ./assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp ./assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
-install -m 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}
-install -m 0755 ./target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}
-install -m 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/%{name}
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications org.wezfurlong.wezterm.desktop
+# place additional binary files
+cp ./target/release/%{name}-gui %{buildroot}/usr/bin/%{name}-gui
+cp ./target/release/%{name}-mux-server %{buildroot}/usr/bin/%{name}-mux-server
+cp ./target/release/strip-ansi-escapes/usr/bin/strip-ansi-escapes
 
 %files
-/usr/bin/ ./target/release/%{name}-gui
-/usr/bin/ ./target/release/%{name}-mux-server
-/usr/bin/ ./target/release/strip-ansi-escapes
-/etc/profild.d/ wezterm.sh
-/usr/share/icons/hicolor/128x128/apps/ org.wezfurlong.wezterm.png
+/usr/bin/%{name}-gui
+/usr/bin/%{name}-mux-server
+/usr/bin/strip-ansi-escapes
+/etc/profild.d/wezterm.sh
+/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 %{_metainfodir}/ org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
 %doc README.md
