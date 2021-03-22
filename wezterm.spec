@@ -49,7 +49,7 @@ install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 /usr/share/applications/org.wezfurlong.wezterm.desktop
 /etc/profild.d/wezterm.sh
 /usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-/%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE.md
