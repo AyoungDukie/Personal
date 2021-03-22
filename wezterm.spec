@@ -31,7 +31,6 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
 mkdir -p %{buildroot}/usr/share/applications
 # prepare desktop and icon files
-cp ./assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 cp ./assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
 # place additional asset files
 cp ./assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
@@ -39,8 +38,8 @@ cp ./assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
-desktop-file-install --dir=%{buildroot}%{_datadir}/applications org.wezfurlong.wezterm.desktop
-# place additional binary files
+# place .desktop and additional binary files
+cp ./assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
 cp ./target/release/%{name}-gui %{buildroot}/usr/bin/%{name}-gui
 cp ./target/release/%{name}-mux-server %{buildroot}/usr/bin/%{name}-mux-server
 cp ./target/release/strip-ansi-escapes/usr/bin/strip-ansi-escapes
@@ -49,9 +48,10 @@ cp ./target/release/strip-ansi-escapes/usr/bin/strip-ansi-escapes
 /usr/bin/%{name}-gui
 /usr/bin/%{name}-mux-server
 /usr/bin/strip-ansi-escapes
+/usr/share/applications/org.wezfurlong.wezterm.desktop
 /etc/profild.d/wezterm.sh
 /usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-%{_metainfodir}/ org.wezfurlong.wezterm.appdata.xml
+%{_metainfodir} org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE.md
