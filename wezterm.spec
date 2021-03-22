@@ -30,7 +30,7 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
 mkdir -p %{buildroot}/usr/share/applications
 # prepare desktop and icon files
-cp $(pwd)/assets/wezterm.appdata.xml %{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+cp $(pwd)/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # place additional asset files
 cp $(pwd)/assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 cp $(pwd)/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
