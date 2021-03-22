@@ -30,6 +30,7 @@ cargo build --release
 cp ./assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 cp ./assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
 cp ./assets/icon/terminal.png ./org.wezfurlong.wezterm.png
+cp ./assets/shell-integration/wezterm.sh ./wezterm.sh
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
@@ -39,7 +40,10 @@ install -m 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/%{nam
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications org.wezfurlong.wezterm.desktop
 
 %files
-/etc/profild.d/ 
+/usr/bin/ ./target/release/%{name}-gui
+/usr/bin/ ./target/release/%{name}-mux-server
+/usr/bin/ ./target/release/strip-ansi-escapes
+/etc/profild.d/ wezterm.sh
 /usr/share/icons/hicolor/128x128/apps/ org.wezfurlong.wezterm.png
 %{_metainfodir}/ org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
