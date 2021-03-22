@@ -36,9 +36,9 @@ cp $(pwd)/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.
 cp $(pwd)/assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 cp $(pwd)/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 # place .desktop and additional binary files
-cp $(pwd)/target/release/%{name}-gui %{buildroot%{_bindir}/%{name}-gui
-cp $(pwd)/target/release/%{name}-mux-server %{buildroot%{_bindir}/%{name}-mux-server
-cp $(pwd)/target/release/strip-ansi-escapes %{buildroot%{_bindir}/strip-ansi-escapes
+cp $(pwd)/target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}-gui
+cp $(pwd)/target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
+cp $(pwd)/target/release/strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
 cp $(pwd)/assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
 
 %install
