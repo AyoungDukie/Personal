@@ -27,6 +27,7 @@ ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
 # locate files for install
 mkdir -p %{buildroot}/etc/profile.d
+mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
 mkdir -p %{buildroot}/usr/share/applications
 mkdir -p %{buildroot}%{_metainfodir}
