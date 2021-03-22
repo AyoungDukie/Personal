@@ -27,36 +27,35 @@ ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
 # locate files for install
 mkdir -p %{buildroot}/etc/profile.d
-mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
 mkdir -p %{buildroot}/usr/share/applications
 # prepare desktop and icon files
-cp ./assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
+cp $(pwd)/assets/wezterm.appdata.xml %{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # place additional asset files
-cp ./assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-cp ./assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
+cp $(pwd)/assets/icon/terminal.png %{buildroot}/usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp $(pwd)/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 # place .desktop and additional binary files
-cp ./target/release/%{name}-gui %{buildroot}/usr/bin/%{name}-gui
-cp ./target/release/%{name}-mux-server %{buildroot}/usr/bin/%{name}-mux-server
-cp ./target/release/strip-ansi-escapes %{buildroot}/usr/bin/strip-ansi-escapes
-cp ./assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
+cp $(pwd)/target/release/%{name}-gui %{_bindir}/%{name}-gui
+cp $(pwd)/target/release/%{name}-mux-server %{_bindir}/%{name}-mux-server
+cp $(pwd)/target/release/strip-ansi-escapes %{_bindir}/strip-ansi-escapes
+cp $(pwd)/assets/wezterm.desktop %{buildroot}/usr/share/applications/org.wezfurlong.wezterm.desktop
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 
 
 %files
-/usr/bin/%{name}-gui
-/usr/bin/%{name}-mux-server
-/usr/bin/strip-ansi-escapes
 /usr/share/applications/org.wezfurlong.wezterm.desktop
 /etc/profild.d/wezterm.sh
 /usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-%{_metainfodir} org.wezfurlong.wezterm.appdata.xml
+/%{_metainfodir} org.wezfurlong.wezterm.appdata.xml
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE.md
 %{_bindir}/%{name}
+%{_bindir}/%{name}-gui
+%{_bindir}/%{name}-mux-server
+%{_bindir}/strip-ansi-escapes
 
 %changelog
 * Sun Mar 21 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
