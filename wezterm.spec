@@ -29,6 +29,7 @@ cargo build --release
 mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}/usr/share/icons/hicolor/128x128/apps
 mkdir -p %{buildroot}/usr/share/applications
+mkdir -p %{buildroot}%{_metainfodir}
 # prepare desktop and icon files
 cp $(pwd)/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # place additional asset files
