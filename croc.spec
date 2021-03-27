@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    croc
-Version: 8.6.11
+Version: 8.6.12
 Release: 1%{?dist}
 Summary: croc - secure and easy data transfer
 
@@ -33,5 +33,7 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Fri Mar 26 2021 James Flynn <ayoungdukie_copr@duk13.win> - 8.6.12-1
+- Update to croc-8.6.12
 * Sun Mar 21 2021 James Flynn <ayoungdukie_copr@duk13.win> - 8.6.11-1
 - Initial with croc-8.6.11
