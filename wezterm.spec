@@ -32,7 +32,7 @@ mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps
 
 # prepare desktop and icon files
-cp $(pwd)/assets/icon/terminal.png %{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp $(pwd)/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 cp $(pwd)/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 # place apddata nd integration files
 cp $(pwd)/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
