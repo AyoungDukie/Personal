@@ -45,7 +45,7 @@ cp $(pwd)/target/release/strip-ansi-escapes ./strip-ansi-escapes
 
 
 %install
-install -Dp -m0644 org.wezfurlong.wezterm.desktop %{_datadir}/applications/org.wezfurlong.wezterm.desktop
+install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}/%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 install -Dp -m0644 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dp -m0644 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
 install -Dp -m0644 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
