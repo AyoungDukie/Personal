@@ -29,7 +29,7 @@ cargo build --release
 mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
-mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps
+mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 
 # prepare desktop and icon files
 cp $(pwd)/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
@@ -45,7 +45,7 @@ cp $(pwd)/target/release/strip-ansi-escapes ./strip-ansi-escapes
 
 
 %install
-install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}/%{_datadir}/applications/org.wezfurlong.wezterm.desktop
+install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 install -Dp -m0644 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dp -m0644 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
 install -Dp -m0644 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
