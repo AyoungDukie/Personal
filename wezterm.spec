@@ -32,24 +32,25 @@ mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 
 # prepare desktop and icon files
-cp $(pwd)/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-cp $(pwd)/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
+%define mybuild $(pwd)
+cp %{mybuild}/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 # place apddata nd integration files
-cp $(pwd)/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
-cp $(pwd)/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
+cp %{mybuild}/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+cp %{mybuild}/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 # place additional binary afiles
-cp $(pwd)/target/release/%{name} ./%{name}
-cp $(pwd)/target/release/%{name}-gui ./%{name}-gui
-cp $(pwd)/target/release/%{name}-mux-server ./%{name}-mux-server
-cp $(pwd)/target/release/strip-ansi-escapes ./strip-ansi-escapes
+cp %{mybuild}/target/release/%{name} %{mybuild}/%{name}
+cp %{mybuild}/target/release/%{name}-gui %{mybuild}/%{name}-gui
+cp %{mybuild}/target/release/%{name}-mux-server %{mybuild}/%{name}-mux-server
+cp %{mybuild}/target/release/strip-ansi-escapes %{mybuild}/strip-ansi-escapes
 
 
 %install
 install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
-install -Dp -m0644 %{name} %{buildroot}%{_bindir}/%{name}
-install -Dp -m0644 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
-install -Dp -m0644 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
-install -Dp -m0644 strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
+install -Dp -m0644 %{mybuild}/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dp -m0644 %{mybuild}/%{name}-gui %{buildroot}%{_bindir}/%{name}-gui
+install -Dp -m0644 %{mybuild}/%{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
+install -Dp -m0644 %{mybuild}/strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
