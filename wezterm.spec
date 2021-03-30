@@ -69,5 +69,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog
-* Tues Mar 30 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
+* Tue Mar 30 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
 - Initial with wezterm 20210314-114017-04b7cedd
