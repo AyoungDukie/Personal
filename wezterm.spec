@@ -30,7 +30,6 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
-
 # prepare desktop and icon files
 %define mybuild $(pwd)
 cp %{mybuild}/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
@@ -43,7 +42,6 @@ cp %{mybuild}/target/release/%{name} %{mybuild}/%{name}
 cp %{mybuild}/target/release/%{name}-gui %{mybuild}/%{name}-gui
 cp %{mybuild}/target/release/%{name}-mux-server %{mybuild}/%{name}-mux-server
 cp %{mybuild}/target/release/strip-ansi-escapes %{mybuild}/strip-ansi-escapes
-
 
 %install
 install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
