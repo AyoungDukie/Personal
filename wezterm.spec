@@ -52,7 +52,7 @@ install -Dp -m0644 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
 install -Dp -m0644 strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
 
 %check
-
+desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 
 %files
 %defattr(0644,root,root)
