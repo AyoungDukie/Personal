@@ -18,7 +18,6 @@ Requires: openssl
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 %prep
-
 %setup -q -n %{name}-%{vtag}
 
 %build
@@ -38,7 +37,6 @@ cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 cp %{mybuild}/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 cp %{mybuild}/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 # place additional binary afiles
-cp %{mybuild}/target/release/%{name} ./%{name}
 cp %{mybuild}/target/release/%{name}-gui ./%{name}-gui
 cp %{mybuild}/target/release/%{name}-mux-server ./%{name}-mux-server
 cp %{mybuild}/target/release/strip-ansi-escapes ./strip-ansi-escapes
