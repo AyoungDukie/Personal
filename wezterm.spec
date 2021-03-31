@@ -29,20 +29,18 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
-# prepare desktop and icon files
 %define mybuild $(pwd)
-cp %{mybuild}/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
-# place apddata nd integration files
-cp %{mybuild}/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
-cp %{mybuild}/assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
-# place additional binary afiles
-# cp %{mybuild}/target/release/%{name}-gui ./%{name}-gui
-# cp %{mybuild}/target/release/%{name}-mux-server ./%{name}-mux-server
-# cp %{mybuild}/target/release/strip-ansi-escapes ./strip-ansi-escapes
 
 %install
+# prepare desktop and icon files
+cp %{mybuild}/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
+# place apddata and integration files
+cp %{mybuild}/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
+# install binaries, desktop file, and integration script
 install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
+install -Dpm 0644 wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}-gui
 install -Dm 0755 ./target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
@@ -55,7 +53,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %defattr(0644,root,root)
 %license LICENSE.md
 %doc README.md
-%dir {_datadir}
+%dir %{_datadir}
 %{_datadir}/applications/org.wezfurlong.wezterm.desktop
 %{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 %{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
