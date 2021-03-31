@@ -45,7 +45,7 @@ cp %{mybuild}/target/release/strip-ansi-escapes ./strip-ansi-escapes
 
 %install
 install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
 install -Dm 0755 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
 install -Dm 0755 strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
