@@ -21,7 +21,6 @@ Keeping your system up to date mostly involves invoking more than a single packa
 mkdir -p ./_build/src/github.com/r-darwish
 ln -s $(pwd) ./_build/src/github.com/r-darwish/%{name}
 cargo build --release
-#make generate
 
 %install
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
