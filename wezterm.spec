@@ -30,14 +30,17 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 %define mybuild $(pwd)
-
-%install
 # prepare desktop and icon files
-cp %{mybuild}/assets/icon/terminal.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+cp %{mybuild}/assets/icon/terminal.png ./org.wezfurlong.wezterm.png
 cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
 # place apddata and integration files
-cp %{mybuild}/assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+cp %{mybuild}/assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
 cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
+
+%install
+# place asset files
+mv org.wezfurlong.wezterm.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+mv wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file, and integration script
 install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 install -Dpm 0644 wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
