@@ -19,7 +19,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 
 %prep
 
-%setup -q -n %{name}-%{vtag}
+%setup -q -n %{name}-%{version}
 
 %build
 mkdir -p ./_build/src/github.com/wez
@@ -44,11 +44,11 @@ cp %{mybuild}/target/release/%{name}-mux-server ./%{name}-mux-server
 cp %{mybuild}/target/release/strip-ansi-escapes ./strip-ansi-escapes
 
 %install
-install -Dp -m0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
-install -D -m0755 %{name} %{buildroot}%{_bindir}/%{name}
-install -D -m0755 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
-install -D -m0755 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
-install -D -m0755 strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
+install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name}-gui %{buildroot}%{_bindir}/%{name}-gui
+install -Dm 0755 %{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
+install -Dm 0755 strip-ansi-escapes %{buildroot}%{_bindir}/strip-ansi-escapes
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
