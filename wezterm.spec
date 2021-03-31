@@ -39,7 +39,7 @@ cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
 
 %install
 # place asset files
-mv org.wezfurlong.wezterm.png %{buildroot}/%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+mv org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 mv wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file, and integration script
 install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
