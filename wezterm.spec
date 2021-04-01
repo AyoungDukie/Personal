@@ -45,7 +45,7 @@ install -Dm 0755 ./target/release/strip-ansi-escapes %{buildroot}%{_bindir}/stri
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 
 %files
-%defattr(0644,root,root)
+%defattr(-,root,root,-)
 %license LICENSE.md
 %doc README.md
 %dir %{_datadir}
