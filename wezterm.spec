@@ -24,12 +24,6 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 mkdir -p ./_build/src/github.com/wez
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
-# %define mybuild $(pwd)
-# locate files for install
-# cp %{mybuild}/assets/icon/terminal.png ./org.wezfurlong.wezterm.png
-# cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
-# cp %{mybuild}/assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
-# cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
 
 %install
 # place asset files
