@@ -55,11 +55,10 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %license LICENSE.md
 %doc README.md
 %dir %{_datadir}
-%dir /etc/profile.d
 %{_datadir}/applications/org.wezfurlong.wezterm.desktop
 %{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 %{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
-/etc/profild.d/wezterm.sh
+/etc/profile.d/wezterm.sh
 %{_bindir}/%{name}
 %{_bindir}/%{name}-gui
 %{_bindir}/%{name}-mux-server
