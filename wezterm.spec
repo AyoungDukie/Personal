@@ -39,8 +39,8 @@ mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 mv org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 mv org.wezfurlong.wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
-mv wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 # install binaries, desktop file
+install -Dpm 0644 wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
 install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}-gui
@@ -55,6 +55,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %license LICENSE.md
 %doc README.md
 %dir %{_datadir}
+%dir /etc/profile.d
 %{_datadir}/applications/org.wezfurlong.wezterm.desktop
 %{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 %{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
@@ -65,5 +66,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog
-* Wed Mar 31 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
+* Thu Apr 1 2021 James Flynn <ayoungdukie_copr@duk13.win> - %{version}-1
 - Initial with wezterm 20210314-114017-04b7cedd
