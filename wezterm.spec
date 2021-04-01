@@ -24,12 +24,12 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 mkdir -p ./_build/src/github.com/wez
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 cargo build --release
-%define mybuild $(pwd)
+# %define mybuild $(pwd)
 # locate files for install
-cp %{mybuild}/assets/icon/terminal.png ./org.wezfurlong.wezterm.png
-cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
-cp %{mybuild}/assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
-cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
+# cp %{mybuild}/assets/icon/terminal.png ./org.wezfurlong.wezterm.png
+# cp %{mybuild}/assets/wezterm.desktop ./org.wezfurlong.wezterm.desktop
+# cp %{mybuild}/assets/wezterm.appdata.xml ./org.wezfurlong.wezterm.appdata.xml
+# cp %{mybuild}/assets/shell-integration/wezterm.sh ./wezterm.sh
 
 %install
 # place asset files
@@ -37,11 +37,11 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
-mv org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
-mv org.wezfurlong.wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
+mv ./assets/icon/terminal.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
+mv ./assets/wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file
-install -Dpm 0644 wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
-install -Dpm 0644 org.wezfurlong.wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
+install -Dpm 0644 ./assets/shell-integration/wezterm.sh %{buildroot}/etc/profile.d/wezterm.sh
+install -Dpm 0644 ./assets/wezterm.desktop %{buildroot}%{_datadir}/applications/org.wezfurlong.wezterm.desktop
 install -Dm 0755 ./target/release/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./target/release/%{name}-gui %{buildroot}%{_bindir}/%{name}-gui
 install -Dm 0755 ./target/release/%{name}-mux-server %{buildroot}%{_bindir}/%{name}-mux-server
