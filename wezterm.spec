@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    wezterm
-Version: 20210314.114017.04b7cedd
+Version: 20210405.110924.a5bb5be8
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
