@@ -8,7 +8,9 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vsco
 
 sudo dnf install git gcc libgcc binutils-gold glibc-devel codium
 
+mkdir -p ~/.cargo/bin
+PATH=$PATH:~/.cargo/bin && echo 'PATH=$PATH:~/.cargo/bin' >> ~/.bash_profile
+
 # Rust Setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-PATH=$PATH:~/.cargo/bin && echo 'PATH=$PATH:~/.cargo/bin' >> ~/.bash_profile 
