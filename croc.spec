@@ -8,23 +8,20 @@ Summary: croc - secure and easy data transfer
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/schollz/%{name}
-Source0: https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_src.tar.gz
+Source0: https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux-64bit.tar.gz
 BuildRequires: git,golang-bin
 
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
 
 %prep
+
 %setup -q -n %{name}-%{version}
 
 %build
-mkdir -p ./_build/src/github.com/schollz
-ln -s $(pwd) ./_build/src/github.com/schollz/%{name}
-export GOPATH=$(pwd)/_build:%{gopath}
-go build -o %{name}
 
 %install
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+cp -rfa * %{buildroot}
 
 %files
 %defattr(-,root,root,-)
