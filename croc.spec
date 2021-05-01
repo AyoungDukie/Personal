@@ -28,7 +28,8 @@ tar -xvzf %{name}_%{version}_Linux-64bit.tar.gz -C ./_build/src/github.com/schol
 %install
 # setup final installation
 mkdir -p %{buildroot}%{_bindir}
-# Install Files 
+# Install Files
+cd ./_build/src/github.com/schollz/%{name}
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 bash_autocomplete %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
