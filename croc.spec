@@ -18,7 +18,7 @@ croc is a tool that allows any two computers to simply and securely transfer fil
 %setup -q -n %{name}-%{version}
 
 %build
-wget %{Source0}
+curl -LJO %{SOURCE0}
 tar -xvzf {name}_%{version}_Linux-64bit.tar.gz -C ./_build/src/github.com/schollz/%{name}
 ls ./_build/src/github.com/schollz/%{name}
 
