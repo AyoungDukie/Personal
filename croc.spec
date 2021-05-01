@@ -9,7 +9,6 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/schollz/%{name}
 Source0: https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux-64bit.tar.gz
-BuildRequires: git,golang-bin
 
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
@@ -19,9 +18,11 @@ croc is a tool that allows any two computers to simply and securely transfer fil
 %setup -q -n %{name}-%{version}
 
 %build
+tar -xvzf 
 
 %install
-cp -rfa * %{buildroot}
+
+cp -rfa LICENSE README.md %{name} %{buildroot}
 
 %files
 %defattr(-,root,root,-)
