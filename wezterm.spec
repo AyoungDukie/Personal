@@ -24,7 +24,7 @@ mkdir -p ./_build/src/github.com/wez/%{name}
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 # pull fresh binary tarball
 curl -LJO "https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.Ubuntu16.04.tar.xz"
-tar -xvzf %{name}-%{vtag}.Ubuntu16.04.tar.xz -C ./_build/src/github.com/wez/%{name}
+tar -xvf %{name}-%{vtag}.Ubuntu16.04.tar.xz -C ./_build/src/github.com/wez/%{name}
 
 %install
 # Prepare asset files
