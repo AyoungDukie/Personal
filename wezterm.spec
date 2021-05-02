@@ -18,7 +18,7 @@ Requires: openssl
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 %prep
-%setup -q -n %{name}-%{vtag}
+%setup -q -c
 
 %build
 # pull fresh License and README Files
