@@ -26,6 +26,8 @@ ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 # pull fresh binary tarball
 curl -LJO "https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.Ubuntu16.04.tar.xz"
 tar -xvf %{name}-%{vtag}.Ubuntu16.04.tar.xz -C ./_build/src/github.com/wez/%{name}
+curl -LJO %{URL}/blob/main/LICENSE.md
+curl -LJO %{URL}/blob/main/README.md
 
 %install
 # Prepare asset files
