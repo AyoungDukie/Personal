@@ -18,7 +18,7 @@ Requires: openssl
 A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{vtag}
 
 %build
 # pull fresh License and README Files
@@ -32,6 +32,7 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 cd %{name}
+ls
 mv ./usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 mv ./usr/share/metainfo/org.wezfurlong.wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file
