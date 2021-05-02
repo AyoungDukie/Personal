@@ -22,8 +22,8 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 
 %build
 # pull fresh License and README Files
-curl -LJO %{URL}/blob/main/LICENSE.md
-curl -LJO %{URL}/blob/main/README.md
+curl -LJO %{URL}/blob/v%{vtag}/LICENSE.md
+curl -LJO %{URL}/blob/v%{vtag}/README.md
 
 %install
 # Prepare asset files
