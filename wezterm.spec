@@ -23,7 +23,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 mkdir -p ./_build/src/github.com/wez/%{name}
 ln -s $(pwd) ./_build/src/github.com/wez/%{name}
 # pull fresh binary tarball
-curl -LJO " https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.Ubuntu16.04.tar.xz"
+curl -LJO "https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.Ubuntu16.04.tar.xz"
 tar -xvzf %{name}-%{vtag}.Ubuntu16.04.tar.xz -C ./_build/src/github.com/wez/%{name}
 
 %install
