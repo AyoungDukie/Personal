@@ -21,11 +21,7 @@ A GPU-accelerated cross-platform terminal emulator and multiplexer written by @w
 %setup -q
 
 %build
-mkdir -p ./_build/src/github.com/wez/%{name}
-ln -s $(pwd) ./_build/src/github.com/wez/%{name}
-# pull fresh binary tarball
-curl -LJO "https://github.com/wez/%{name}/releases/download/%{vtag}/%{name}-%{vtag}.Ubuntu16.04.tar.xz"
-tar -xvf %{name}-%{vtag}.Ubuntu16.04.tar.xz -C ./_build/src/github.com/wez/%{name}
+# pull fresh License and README Files
 curl -LJO %{URL}/blob/main/LICENSE.md
 curl -LJO %{URL}/blob/main/README.md
 
@@ -35,10 +31,7 @@ mkdir -p %{buildroot}/etc/profile.d
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
-# Place files
-cp -a ./_build/src/github.com/wez/%{name} .
-cd %{name}/%{name}
-ls
+cd %{name}
 mv ./usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 mv ./usr/share/metainfo/org.wezfurlong.wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file
