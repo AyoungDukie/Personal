@@ -15,7 +15,8 @@ croc is a tool that allows any two computers to simply and securely transfer fil
 
 %prep
 
-%setup -q
+%setup -q -n %{name}-%{version}
+ls
 
 %build
 # set up file locations
