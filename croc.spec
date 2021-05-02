@@ -20,9 +20,9 @@ ls
 
 %build
 # set up file locations
-mkdir -p ./_build/src/github.com/schollz/%{name}
+# mkdir -p ./_build/src/github.com/schollz/%{name}
 ls
-ln -s $(pwd) ./_build/src/github.com/schollz/%{name}
+# ln -s $(pwd) ./_build/src/github.com/schollz/%{name}
 # Download fresh tarball and extract
 # curl -LJO "https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux-64bit.tar.gz"
 # tar -xvzf %{name}_%{version}_Linux-64bit.tar.gz -C ./_build/src/github.com/schollz/%{name}
