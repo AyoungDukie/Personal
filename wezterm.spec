@@ -7,8 +7,6 @@ Version: %(echo "$(tr '-' '.' <<< %{vtag})")
 Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 
-# %define vtag %(echo "$(tr '.' '-' <<< %{version})")
-
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/wez/%{name}
