@@ -26,8 +26,7 @@ curl -LJO %{URL}/blob/v{%version}/README.md
 curl -LJO %{URL}/blob/v{%version}/LICENSE
 
 %install
-ls
-install -Dm 0755 elvish %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name}-v%{version} %{buildroot}%{_bindir}/%{name}
 
 %files
 %defattr(-,root,root,-)
