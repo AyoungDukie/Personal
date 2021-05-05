@@ -24,9 +24,10 @@ Elvish aims to explore the potentials of the Unix shell. It is a work in progres
 #get files for install
 curl -LJO %{URL}/blob/v{%version}/README.md
 curl -LJO %{URL}/blob/v{%version}/LICENSE
+mv %{name}-v%{version} %{name}
 
 %install
-install -Dm 0755 %{name}-v%{version} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %defattr(-,root,root,-)
