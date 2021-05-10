@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    croc
-Version: 9.1.1
+Version: 9.1.2
 Release: 1%{?dist}
 Summary: croc - secure and easy data transfer
 
@@ -34,6 +34,8 @@ install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Mon May 10 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.2-1
+- Update to croc-9.1.2
 * Sat May 1 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.1-1
 - Update to croc-9.1.1
 * Tue Apr 20 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.0-1
