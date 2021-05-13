@@ -1,14 +1,16 @@
 %global debug_package %{nil}
 
+%define binType Linux-64bit
+
 Name:    croc
-Version: 9.1.3
+Version: 9.1.4
 Release: 1%{?dist}
 Summary: croc - secure and easy data transfer
 
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/schollz/%{name}
-Source0: https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux-64bit.tar.gz
+Source0: https://github.com/schollz/%{name}/releases/download/v%{version}/%{name}_%{version}_%{binType}.tar.gz
 
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
@@ -20,6 +22,9 @@ croc is a tool that allows any two computers to simply and securely transfer fil
 %build
 
 %install
+# get checksums
+curl -LJO %{URL}/blob/releases/download/v%{version}/%{name}_%{version}_checksums.txt
+
 # setup final installation
 mkdir -p %{buildroot}%{_bindir}
 # Install Files
@@ -34,6 +39,8 @@ install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Thu May 13 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.4-1
+- Update to croc-9.1.4
 * Tue May 11 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.3-1
 - Update to croc-9.1.3
 * Mon May 10 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.2-1
