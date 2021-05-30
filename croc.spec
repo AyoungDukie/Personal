@@ -36,7 +36,7 @@ install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE
-chmod -x %{name}
+chmod -x %{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
