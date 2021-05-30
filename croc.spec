@@ -28,7 +28,8 @@ croc is a tool that allows any two computers to simply and securely transfer fil
 # setup final installation
 mkdir -p %{buildroot}%{_bindir}
 # Install Files
-# install -Dm 0644 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0644 %{name} %{buildroot}%{_bindir}/%{name}
+chmod -x %{name}
 install -Dm 0755 bash_autocomplete %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
 
