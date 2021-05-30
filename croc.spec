@@ -36,8 +36,10 @@ install -Dm 0755 zsh_autocomplete %{buildroot}%{_bindir}/%{name}
 %defattr(-,root,root,-)
 %doc README.md
 %license LICENSE
-chmod -x %{_bindir}/%{name}
 %{_bindir}/%{name}
+
+%post
+chmod -x %{_bindir}/%{name}
 
 %changelog
 * Thu May 13 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.4-1
