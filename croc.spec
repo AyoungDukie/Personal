@@ -28,7 +28,7 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
-* Thu May 13 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.2.1-1
+* Mon Aug 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.2.1-1
 - Update to croc-9.2.1
 * Thu May 13 2021 James Flynn <ayoungdukie_copr@duk13.win> - 9.1.4-1
 - Update to croc-9.1.4
