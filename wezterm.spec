@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag 20210814-124438-54e29167
+%define vtag 20211204-082213-a66c61ee9
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
@@ -33,7 +33,7 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_metainfodir}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/128x128/apps
 cd %{name}
-ls
+# ls
 mv ./usr/share/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/org.wezfurlong.wezterm.png
 mv ./usr/share/metainfo/org.wezfurlong.wezterm.appdata.xml %{buildroot}%{_metainfodir}/org.wezfurlong.wezterm.appdata.xml
 # install binaries, desktop file
@@ -62,6 +62,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog
+* Mon Dec 6 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20211204.082213.a66c61ee9-1
+- Update to wezterm 20211204-082213-a66c61ee9
 * Mon Aug 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210814.124438.54e29167-1
 - Update to wezterm 20210814-124438-54e29167
 * Tues May 4 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210502.154244.3f7122cb-1
