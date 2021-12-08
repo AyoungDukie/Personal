@@ -60,7 +60,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 - Switch source for build to latest LTS version.
 * Mon Aug 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210814.124438.54e29167-1
 - Update to wezterm 20210814-124438-54e29167
-* Tues May 4 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210502.154244.3f7122cb-1
+* Tue May 4 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210502.154244.3f7122cb-1
 - Updated with wezterm 20210405-110924-a5bb5be8 and rebased on source binaries
 * Sat May 1 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210405.110924.a5bb5be8-1
 - Updated with wezterm 20210405-110924-a5bb5be8 and rebased on source binaries
