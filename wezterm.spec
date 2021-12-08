@@ -1,10 +1,10 @@
 %global debug_package %{nil}
 
-%define vtag 20210814-124438-54e29167
+%define vtag 20211205-192649-672c1cc1
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
-Release: 2%{?dist}
+Release: 1%{?dist}
 Summary: WezTerm - a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
 Group:   System Environment/Shells
 License: MIT
@@ -54,6 +54,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog
+* Mon Dec 6 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20211205.192649.672c1cc1-1
+- Update to wezterm 20211205-192649-672c1cc1
 * Mon Dec 6 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210814.124438.54e29167-2
 - Switch source for build to latest LTS version.
 * Mon Aug 16 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20210814.124438.54e29167-1
