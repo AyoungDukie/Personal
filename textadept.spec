@@ -11,7 +11,7 @@ Source0:        https://github.com/orbitalquark/%{name}/releases/download/%{name
 
 BuildRequires:  gcc-c++
 BuildRequires:  libstdc++
-BuildRequires:  gtk2-devel
+BuildRequires:  gtk3-devel
 BuildRequires:  ncurses-devel
 BuildRequires:  wget   
 
@@ -29,7 +29,7 @@ make curses -C src
 %install
 install -d $RPM_BUILD_ROOT/opt/%{name}
 cp -r core doc modules scripts themes $RPM_BUILD_ROOT/opt/%{name}
-cp -r src/scintilla/lexlua $RPM_BUILD_ROOT/opt/%{name}/lexers
+cp -r lexers $RPM_BUILD_ROOT/opt/%{name}/lexers
 cp init.lua $RPM_BUILD_ROOT/opt/%{name}
 install -D -m 0755 %{name} $RPM_BUILD_ROOT/opt/%{name}/%{name}
 install -D -m 0755 %{name}-curses $RPM_BUILD_ROOT/opt/%{name}/%{name}-curses
@@ -80,5 +80,7 @@ ln -s /opt/%{name}/core/images/textadept.svg \
 %{_datadir}/icons/hicolor/scalable/apps/textadept.svg
 
 %changelog
+* Thur Mar 31 2022 * Wed Mar 30 2022 James Flynn <ayoungdukie_copr@duk13.win> - 11.3
+- First release
 * Fri Mar 20 2020 Aku3 <akuzeru3 at gmail.com> - 10.8
 - First release
