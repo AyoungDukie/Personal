@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    elvish
-Version: 0.17.0
+Version: 0.18.0
 Release: 1%{?dist}
 Summary: Elvish - A friendly and expressive Unix shell
 
@@ -36,6 +36,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 0.18.0-1
+- Update to elvish-0.18.0
 * Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 0.17.0-1
 - Update to elvish-0.17.0
 * Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 0.16.0-1
