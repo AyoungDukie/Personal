@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 9.0.0
+Version: 9.0.1
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
@@ -31,6 +31,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 9.0.1-1
+- Update to topgrade-9.0.1
 * Wed May 18 2022 James Flynn <ayoungdukie_copr@duk13.win> - 9.0.0-1
 - Update to topgrade-9.0.0
 * Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 8.3.1-1
