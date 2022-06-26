@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag 20220408-101518-b908e2dd
+%define vtag 20220624-141144-bd1b7c5d
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
@@ -53,12 +53,14 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/%{name}-mux-server
 %{_bindir}/strip-ansi-escapes
 
-%changelog
-* Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220408-101518-b908e2dd-1
+%changelog 20220624-141144-bd1b7c5d
+* Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220624.141144.bd1b7c5d-1
+- Update to wezterm 20220624-141144-bd1b7c5d
+* Tue Apr 12 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220408.101518.b908e2dd-1
 - Update to wezterm 20220408-101518-b908e2dd
-* Sun Mar 20 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220319-142410-0fcdea07-1
+* Sun Mar 20 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220319.142410.0fcdea07-1
 - Update to wezterm 20220319-142410-0fcdea07
-* Sat Jan 1 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220101-133340-7edc5b5a-1
+* Sat Jan 1 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220101.133340.7edc5b5a-1
 - Update to wezterm 20220101-133340-7edc5b5a
 * Mon Dec 6 2021 James Flynn <ayoungdukie_copr@duk13.win> - 20211205.192649.672c1cc1-1
 - Update to wezterm 20211205-192649-672c1cc1
