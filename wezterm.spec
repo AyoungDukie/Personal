@@ -54,7 +54,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog 20220905-102802-7d4b8249 
-* Tues Sep 6 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220905.102802.7d4b8249-1
+* Tue Sep 6 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220905.102802.7d4b8249-1
 - Update to wezterm 20220905-102802-7d4b8249 
 * Mon Aug 8 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220807.113146.c2fee766-1
 - Update to wezterm 20220807-113146-c2fee766
