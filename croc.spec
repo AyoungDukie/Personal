@@ -12,15 +12,20 @@ Source0: https://github.com/schollz/%{name}/archive/v%{version}/%{name}-v%{versi
 BuildRequires: git,golang-bin
 %description
 croc is a tool that allows any two computers to simply and securely transfer files and folders
+
 %prep
+
 %setup -q -n %{name}-%{version}
+
 %build
 mkdir -p ./_build/src/github.com/schollz
 ln -s $(pwd) ./_build/src/github.com/schollz/%{name}
 export GOPATH=$(pwd)/_build:%{gopath}
 go build -o %{name}
+
 %install
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+
 %files
 %defattr(-,root,root,-)
 %doc README.md
