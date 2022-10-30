@@ -1,14 +1,14 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 9.0.1
+Version: 10.0.1
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
 Group:   System Environment/Shells
 License: GPLv3
-URL:     https://github.com/r-darwish/%{name}
-Source0: https://github.com/r-darwish/%{name}/releases/download/v%{version}/%{name}-v%{version}-x86_64-unknown-linux-gnu.tar.gz
+URL:     https://github.com/topgrade-rs/%{name}
+Source0: https://github.com/topgrade-rs/%{name}/releases/download/v%{version}/%{name}-v%{version}-x86_64-linux-gnu.tar.gz
 BuildRequires: cargo
 
 %description
@@ -31,6 +31,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 10.0.1-1
+- Update to topgrade-10.0.1, via community fork prepared by topgrade-rs
 * Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 9.0.1-1
 - Update to topgrade-9.0.1
 * Wed May 18 2022 James Flynn <ayoungdukie_copr@duk13.win> - 9.0.0-1
