@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 10.0.1
+Version: 10.2.4
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
@@ -31,6 +31,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Sat Dec 31 2022 James Flynn <ayoungdukie_copr@duk13.win> - 10.2.4-1
+- Catchup update to topgrade-10.2.4
 * Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 10.0.1-1
 - Update to topgrade-10.0.1, via community fork prepared by topgrade-rs
 * Sun Jun 26 2022 James Flynn <ayoungdukie_copr@duk13.win> - 9.0.1-1
