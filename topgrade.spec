@@ -8,7 +8,7 @@ Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 Group:   System Environment/Shells
 License: GPLv3
 URL:     https://github.com/topgrade-rs/%{name}
-Source0: https://github.com/topgrade-rs/%{name}/releases/download/v%{version}/%{name}-%{version}-x86_64-unknown-linux-gnu.tar.gz
+Source0: https://github.com/topgrade-rs/%{name}/releases/download/v%{version}/%{name}-v%{version}-x86_64-unknown-linux-gnu.tar.gz
 BuildRequires: cargo
 
 %description
