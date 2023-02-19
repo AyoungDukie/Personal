@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define repoauth AyoungDukie
+%define repoauth quickemu-project
 
 Name:    quickemu
 Version: 4.6
