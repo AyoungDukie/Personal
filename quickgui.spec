@@ -10,6 +10,7 @@ Summary: quickgui - A Flutter frontend for quickget and quickemu.
 Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/%{repoauth}/%{name}
+Source0: https://github.com/%{repoauth}/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildRequires: git,gcc,clang,cmake,gtk3-devel,ninja-build,pkg-config,xz-devel
 %description
 A Flutter frontend for quickget and quickemu.
@@ -29,9 +30,6 @@ flutter config --no-enable-web
 flutter doctor -v
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
-cd ./_build/src/github.com/%{repoauth}
-git clone https://github.com/%{repoauth}/%{name}
-cd ../../../..
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
 
