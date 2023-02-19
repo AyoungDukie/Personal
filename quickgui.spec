@@ -40,7 +40,6 @@ install -Dm 0755 ./build/linux/x64/release/bundle/%{name} %{buildroot}%{_bindir}
 %files
 %defattr(-,root,root,-)
 %doc README.md
-%license LICENSE
 %{_bindir}/%{name}
 
 %changelog
