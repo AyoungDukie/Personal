@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define repoauth quickemu-project
+%define repoauth AyoungDukie
 
 Name:    quickgui
 Version: 1.2.8
@@ -31,7 +31,7 @@ flutter doctor -v
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
-flutter build linux --debug
+flutter build linux --release
 
 %install
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/build/linux/x64/release/bundle/%{name}
