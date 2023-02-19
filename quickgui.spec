@@ -27,7 +27,7 @@ export PATH="$PATH:$(pwd)/flutter/bin"
 flutter config --enable-linux-desktop
 flutter config --no-enable-android
 flutter config --no-enable-web
-flutter doctor
+flutter doctor -v
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
