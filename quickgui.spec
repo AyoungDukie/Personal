@@ -35,7 +35,6 @@ ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
 
 %install
-ls
 install -Dm 0755 ./build/linux/x64/release/bundle/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
