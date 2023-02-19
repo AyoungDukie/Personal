@@ -46,6 +46,7 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %{_bindir}/%{name}
 %{_bindir}/quickget
 %{_bindir}/macrecovery
+%{_bindir}/windowskey
 
 %changelog
 * Sun Feb 19 2023 James Flynn <ayoungdukie_copr@duk13.win> - 4.6-1
