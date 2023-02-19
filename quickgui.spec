@@ -20,9 +20,9 @@ A Flutter frontend for quickget and quickemu.
 %setup -q -n %{name}-%{version}
 
 %build
-su ln -s /var/lib/snapd/snap /snap
-su snap install flutter --classic
-su snap alias flutter.dart dart
+su -c "ln -s /var/lib/snapd/snap /snap"
+su -c "snap install flutter --classic"
+su -c "snap alias flutter.dart dart"
 flutter config --enable-linux-desktop
 flutter config --no-enable-android
 mkdir -p ./_build/src/github.com/schollz
