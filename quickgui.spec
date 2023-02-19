@@ -26,6 +26,7 @@ git clone https://github.com/flutter/flutter.git -b stable
 export PATH="$PATH:$(pwd)/flutter/bin"
 flutter config --enable-linux-desktop
 flutter config --no-enable-android
+flutter config --no-enable-web
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
