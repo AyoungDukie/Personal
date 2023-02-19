@@ -28,7 +28,7 @@ ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 %install
 # Prepare asset files
 mkdir -p %{buildroot}%{_bindir}
-ls
+mv ./docs %{buildroot}/docs
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 quickget %{buildroot}%{_bindir}/quickget
 install -Dm 0755 macrecovery %{buildroot}%{_bindir}/macrecovery
