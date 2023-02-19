@@ -28,7 +28,6 @@ ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 %install
 # Prepare asset files
 mkdir -p %{buildroot}%{_bindir}
-mv ./docs %{buildroot}/docs
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 quickget %{buildroot}%{_bindir}/quickget
 install -Dm 0755 macrecovery %{buildroot}%{_bindir}/macrecovery
@@ -37,12 +36,12 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %files
 %defattr(-,root,root,-)
 %doc README.md
-%doc  %{buildroot}/docs/%{name}.1
-%doc  %{buildroot}/docs/%{name}.1.md
-%doc  %{buildroot}/docs/quickget.1
-%doc  %{buildroot}/docs/quickget.1.md
-%doc  %{buildroot}/docs/%{name}_conf.1
-%doc  %{buildroot}/docs/%{name}_conf.1.md
+%doc  ./docs/%{name}.1
+%doc  ./docs/%{name}.1.md
+%doc  ./docs/quickget.1
+%doc  ./docs/quickget.1.md
+%doc  ./docs/%{name}_conf.1
+%doc  ./docs/%{name}_conf.1.md
 %license LICENSE
 %{_bindir}/%{name}
 %{_bindir}/quickget
