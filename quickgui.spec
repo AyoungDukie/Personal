@@ -20,12 +20,13 @@ A Flutter frontend for quickget and quickemu.
 %setup -q -n %{name}-%{version}
 
 %build
-su -c "ln -s /var/lib/snapd/snap /snap"
-su -c "snap install flutter --classic"
-su -c "snap alias flutter.dart dart"
+mkdir flutterEnv
+cd flutterEnv
+git clone https://github.com/flutter/flutter.git -b stable
+export PATH="$PATH:$(pwd)/flutter/bin"
 flutter config --enable-linux-desktop
 flutter config --no-enable-android
-mkdir -p ./_build/src/github.com/schollz
+mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
 
