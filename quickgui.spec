@@ -29,6 +29,7 @@ flutter config --no-enable-android
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
+flutter doctor
 flutter build linux --release
 
 %install
