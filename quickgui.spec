@@ -11,7 +11,7 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
-BuildRequires: git,clang,cmake,gtk3-devel,ninja-build,xz-devel
+BuildRequires: git,gcc,clang,cmake,gtk3-devel,ninja-build,xz-devel
 %description
 A Flutter frontend for quickget and quickemu.
 
