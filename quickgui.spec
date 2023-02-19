@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define repoauth quickemu-project
+%define repoauth AyoungDukie
 
 Name:    quickgui
 Version: 1.2.8
@@ -12,6 +12,7 @@ License: MIT
 URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildRequires: git,gcc,clang,cmake,gtk3-devel,ninja-build,pkg-config,xz-devel
+Requires: quickemu
 %description
 A Flutter frontend for quickget and quickemu.
 
