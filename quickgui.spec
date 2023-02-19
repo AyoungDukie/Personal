@@ -36,7 +36,7 @@ flutter build linux --release
 
 %install
 ls
-install -Dm 0755 %{buildroot}/%{name}/build/linux/x64/release/bundle/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 ./build/linux/x64/release/bundle/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %defattr(-,root,root,-)
