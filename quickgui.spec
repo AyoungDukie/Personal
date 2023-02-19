@@ -27,11 +27,11 @@ export PATH="$PATH:$(pwd)/flutter/bin"
 flutter config --enable-linux-desktop
 flutter config --no-enable-android
 flutter config --no-enable-web
+flutter doctor
 cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
-flutter doctor
-flutter build linux --release
+flutter build linux --debug
 
 %install
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/build/linux/x64/release/bundle/%{name}
