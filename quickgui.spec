@@ -55,7 +55,7 @@ mkdir ./%{name}
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{flpath}/%{name}
 rm %{buildroot}%{_datadir}/tmp/bundle/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
-ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp
+ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
 install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
 rm -rf %{buildroot}%{_datadir}/tmp
