@@ -43,13 +43,14 @@ mkdir -p %{buildroot}%{_datadir}/pixmaps
 
 
 # place assets
-%define bpath $(pwd)
+%define bpath $(pwd)/build/linux/x64/release/bundle/
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
-cp -pr %{bpath}/build/linux/x64/release/bundle/ ./%{name}
+%define flpath $(pwd)/%{name}
+cp -pr %{bpath} ./%{name}
 ln -s ./%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./%{name}/%{name} ./%{name}/%{name}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
@@ -58,10 +59,10 @@ install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
 %defattr(-,root,root,-)
 %doc README.md
 %{_bindir}/%{name}
-%{_bindir}/../%{name}/%{name}
-%{_bindir}/../%{name}/lib/*
-%{_bindir}/../%{name}/data/*
-%{_bindir}/../%{name}/data/flutter_assets/*
+flpath/%{name}
+flpath/lib/*
+flpath/data/*
+flpath/data/flutter_assets/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
