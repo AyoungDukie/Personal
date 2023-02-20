@@ -43,10 +43,11 @@ mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_bindir}/../%{name}
 
 # place assets
-mv ./assets/resources/quickgui.desktop %{_datadir}/applications/quickgui.desktop
+mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
 cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_bindir}/../%{name}
 ln -s %{buildroot}%{_bindir}/../%{name}/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 install -Dm 0755 %{buildroot}%{_bindir}/../%{name}/%{name} %{buildroot}%{_bindir}/../%{name}/%{name}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
 
@@ -58,7 +59,7 @@ install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/../%{name}/lib/*
 %{_bindir}/../%{name}/data/*
 %{_bindir}/../%{name}/data/flutter_assets/*
-%{_datadir}/applications/quickgui.desktop
+%{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
 %changelog
