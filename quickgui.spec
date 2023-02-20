@@ -54,7 +54,7 @@ mkdir ./%{name}
 %define flpath $(pwd)/%{name}
 ls %{buildroot}%{_datadir}/tmp/%{name}
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/%{name} %{flpath}/%{name}
-cp -pr %{buildroot}%{_datadir}/tmp ./%{name}
+mv %{buildroot}%{_datadir}/tmp/* ./%{name}
 ln -s ./%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 cd %{bpath}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
