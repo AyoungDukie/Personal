@@ -53,10 +53,12 @@ cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define flpath $(pwd)/%{name}
 cp -pr %{buildroot}%{_datadir}/tmp ./%{name}
-rm -rf %{buildroot}%{_datadir}/tmp
 ln -s ./%{name}/%{name} %{buildroot}%{_bindir}/%{name}
-install -Dm 0755 ./%{name}/%{name} ./%{name}/%{name}
+mv ./%{name}/%{name} %{buildroot}%{_datadir}/tmp/%{name}
+cd %{bpath}
+install -Dm 0755 %{buildroot}%{_datadir}/tmp/%{name} %{flpath}/%{name}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
+rm -rf %{buildroot}%{_datadir}/tmp
 
 %files
 %defattr(-,root,root,-)
