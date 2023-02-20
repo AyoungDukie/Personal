@@ -52,9 +52,8 @@ cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define flpath $(pwd)/%{name}
-ls %{buildroot}%{_datadir}/tmp/
-install -Dm 0755 %{buildroot}%{_datadir}/tmp/%{name} %{flpath}/%{name}
-mv %{buildroot}%{_datadir}/tmp/* ./%{name}
+install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{flpath}/%{name}
+mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 ln -s ./%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 cd %{bpath}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
