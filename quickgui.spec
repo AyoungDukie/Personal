@@ -36,12 +36,30 @@ ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
 
 %install
-install -Dm 0755 ./build/linux/x64/release/bundle/%{name} %{buildroot}%{_bindir}/%{name}
+# preallocate folders
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_libdir}
+mkdir -p %{buildroot}%{_datadir}/pixmaps
+mkdir -p %{buildroot}%{_bindir}/../%{name}
+
+# place assets
+mv ./assets/resources/quickgui.desktop %{_datadir}/applications/quickgui.desktop
+mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
+cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_bindir}/../%{name}
+ln -s %{buildroot}%{_bindir}/../%{name}/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{buildroot}%{_bindir}/../%{name}/%{name} %{buildroot}%{_bindir}/../%{name}/%{name}
+install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %defattr(-,root,root,-)
 %doc README.md
 %{_bindir}/%{name}
+%{_bindir}/../%{name}/%{name}
+%{_bindir}/../%{name}/lib/*
+%{_bindir}/../%{name}/data/*
+%{_bindir}/../%{name}/data/flutter_assets/*
+%{_datadir}/applications/quickgui.desktop
+%{_datadir}/pixmaps/*
 
 %changelog
 * Sat Feb 18 2023 James Flynn <ayoungdukie_copr@duk13.win> - 1.2.8-1
