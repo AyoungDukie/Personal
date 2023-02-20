@@ -40,17 +40,20 @@ flutter build linux --release
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_datadir}/pixmaps
+mkdir -p %{buildroot}%{_datadir}/tmp
 
 
 # place assets
-%define bpath $(pwd)/build/linux/x64/release/bundle/
+%define bpath $(pwd)
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
+cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define flpath $(pwd)/%{name}
-cp -pr %{bpath} ./%{name}
+cp -pr %{buildroot}%{_datadir}/tmp ./%{name}
+rm -rf %{buildroot}%{_datadir}/tmp
 ln -s ./%{name}/%{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 ./%{name}/%{name} ./%{name}/%{name}
 install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
