@@ -59,10 +59,10 @@ install -Dm 0755 %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}
 %defattr(-,root,root,-)
 %doc README.md
 %{_bindir}/%{name}
-flpath/%{name}
-flpath/lib/*
-flpath/data/*
-flpath/data/flutter_assets/*
+%{flpath}/%{name}
+%{flpath}/lib/*
+%{flpath}/data/*
+%{flpath}/data/flutter_assets/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
