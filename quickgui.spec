@@ -53,7 +53,6 @@ cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define flpath $(pwd)/%{name}
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{flpath}/%{name}
-rm %{buildroot}%{_datadir}/tmp/bundle/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
