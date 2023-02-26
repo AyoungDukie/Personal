@@ -44,7 +44,7 @@ mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_datadir}/tmp
 # place assets
-%define bpath $(pwd)
+%define bpath %(echo $PWD)
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
@@ -54,10 +54,10 @@ rm -rf ./lib
 rm -rf ./linux
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
-%define flpath $(pwd)/%{name}
-install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{flpath}/%{name}
+%define _fldir %(echo $PWD)/%{name}
+install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
-#ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
+#ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
 #install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
 rm -rf %{buildroot}%{_datadir}/tmp
@@ -65,7 +65,7 @@ rm -rf %{buildroot}%{_datadir}/tmp
 
 %post
 if [ $1 == 1 ];then
-    sudo ln -s %{flpath}/%{name} %{_bindir}/%{name} 
+    sudo ln -s %{_fldir}/%{name} %{_bindir}/%{name} 
 fi
 
 %postun
@@ -77,10 +77,10 @@ fi
 %defattr(-,root,root,-)
 %doc README.md
 #%{_bindir}/%{name}
-%{flpath}/%{name}
-%{flpath}/lib/*
-%{flpath}/data/*
-%{flpath}/data/flutter_assets/*
+%{_fldir}/%{name}
+%{_fldir}/lib/*
+%{_fldir}/data/*
+%{_fldir}/data/flutter_assets/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
