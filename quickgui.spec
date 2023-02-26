@@ -41,14 +41,15 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_datadir}/tmp
-
-
 # place assets
 %define bpath $(pwd)
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
 cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
+rm -rf ./build
+rm -rf ./lib
+rm -rf ./linux
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define flpath $(pwd)/%{name}
@@ -58,6 +59,7 @@ mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 cd %{bpath}
 #install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
 rm -rf %{buildroot}%{_datadir}/tmp
+
 
 %post
 if [ $1 == 1 ];then
