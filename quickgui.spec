@@ -44,7 +44,7 @@ mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_datadir}/tmp
 # place assets
-%define bpath %(echo $PWD)
+%define bpath %(echo $(pwd))
 echo %{bpath}
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
@@ -53,7 +53,7 @@ cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define _fldir %(echo $(pwd))%{name}
-echo %{__fldir}
+echo $(%{__fldir})
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 #ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
