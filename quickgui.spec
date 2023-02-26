@@ -34,8 +34,8 @@ cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
-patchelf  .build/linux/x64/release/bundle/lib/libwindow_size_plugin.so  --set-rpath "\$ORIGIN"
-patchelf  .build/linux/x64/release/bundle/lib/liburl_launcher_linux_plugin.so  --set-rpath "\$ORIGIN"
+patchelf  ./build/linux/x64/release/bundle/lib/libwindow_size_plugin.so  --set-rpath "\$ORIGIN"
+patchelf  ./build/linux/x64/release/bundle/lib/liburl_launcher_linux_plugin.so  --set-rpath "\$ORIGIN"
 
 %install
 # preallocate folders
