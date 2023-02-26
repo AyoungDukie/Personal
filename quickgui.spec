@@ -11,7 +11,7 @@ Group:   System Environment/Shells
 License: MIT
 URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/v%{version}/%{name}-v%{version}.tar.gz
-BuildRequires: git,gcc,clang,cmake,gtk3-devel,ninja-build,pkg-config,xz-devel,patchelf
+BuildRequires: git,gcc,clang,cmake,gtk3-devel,ninja-build,pkg-config,xz-devel
 Requires: quickemu
 %description
 A Flutter frontend for quickget and quickemu.
@@ -34,8 +34,8 @@ cd ..
 mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 flutter build linux --release
-patchelf  ./build/linux/x64/release/bundle/lib/libwindow_size_plugin.so  --set-rpath "\$ORIGIN"
-patchelf  ./build/linux/x64/release/bundle/lib/liburl_launcher_linux_plugin.so  --set-rpath "\$ORIGIN"
+chrpath -r  "\$ORIGIN" ./build/linux/x64/release/bundle/lib/libwindow_size_plugin.so  
+chrpath -r  "\$ORIGIN" ./build/linux/x64/release/bundle/lib/liburl_launcher_linux_plugin.so
 
 %install
 # preallocate folders
@@ -55,7 +55,7 @@ rm -rf ./linux
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 %define _fldir %(echo $PWD)/%{name}
-install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
+install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 #ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
@@ -77,10 +77,10 @@ fi
 %defattr(-,root,root,-)
 %doc README.md
 #%{_bindir}/%{name}
-%{_fldir}/%{name}
-%{_fldir}/lib/*
-%{_fldir}/data/*
-%{_fldir}/data/flutter_assets/*
+%{_fldir}%{name}
+%{_fldir}lib/*
+%{_fldir}data/*
+%{_fldir}data/flutter_assets/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
