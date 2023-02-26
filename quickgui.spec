@@ -54,15 +54,25 @@ mkdir ./%{name}
 %define flpath $(pwd)/%{name}
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{flpath}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
-ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
+#ln -s %{flpath}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
-install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
+#install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
 rm -rf %{buildroot}%{_datadir}/tmp
+
+%post
+if [ $1 == 1 ];then
+    sudo ln -s %{flpath}/%{name} %{_bindir}/%{name} 
+fi
+
+%postun
+if [ $1 == 0 ];then
+    sudo rm %{_bindir}/%{name}
+fi 
 
 %files
 %defattr(-,root,root,-)
 %doc README.md
-%{_bindir}/%{name}
+#%{_bindir}/%{name}
 %{flpath}/%{name}
 %{flpath}/lib/*
 %{flpath}/data/*
@@ -71,5 +81,5 @@ rm -rf %{buildroot}%{_datadir}/tmp
 %{_datadir}/pixmaps/*
 
 %changelog
-* Sat Feb 18 2023 James Flynn <ayoungdukie_copr@duk13.win> - 1.2.8-1
+* Sun Feb 26 2023 James Flynn <ayoungdukie_copr@duk13.win> - 1.2.8-1
 - Initial with quickgui-1.2.8
