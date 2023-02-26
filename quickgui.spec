@@ -54,8 +54,8 @@ rm -rf ./lib
 rm -rf ./linux
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
-%define _fldir %(echo $PWD)/%{name}
-install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}%{name}
+%define _fldir %(echo $(pwd))%{name}
+install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 #ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
 cd %{bpath}
@@ -77,10 +77,10 @@ fi
 %defattr(-,root,root,-)
 %doc README.md
 #%{_bindir}/%{name}
-%{_fldir}%{name}
-%{_fldir}lib/*
-%{_fldir}data/*
-%{_fldir}data/flutter_assets/*
+%{_fldir}/%{name}
+%{_fldir}/lib/*
+%{_fldir}/data/*
+%{_fldir}/data/flutter_assets/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/*
 
