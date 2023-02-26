@@ -45,7 +45,7 @@ mkdir -p %{buildroot}%{_datadir}/pixmaps
 mkdir -p %{buildroot}%{_datadir}/tmp
 # place assets
 %define bpath %(echo $(pwd))
-echo %{bpath}
+echo $(pwd)
 mv ./assets/resources/%{name}.desktop ./assets/%{name}.desktop
 install -Dpm 0644 ./assets/%{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
 mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
