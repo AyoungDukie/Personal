@@ -52,7 +52,7 @@ cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 myDir=$(pwd)
 %define _fldir %(echo "$myDir/%{name}")
-echo $(%{_fldir})
+echo "%{_fldir}"
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 #ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
