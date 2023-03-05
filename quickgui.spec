@@ -51,7 +51,7 @@ cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
 PWD=$(pwd)
-%define _fldir %(echo "$(pwd)}"/%{name})
+%define _fldir %(echo "$(pwd)/%{name}")
 echo $(%{_fldir})
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
