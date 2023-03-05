@@ -50,13 +50,12 @@ mv ./assets/resources/* %{buildroot}%{_datadir}/pixmaps/
 cp -pr ./build/linux/x64/release/bundle/ %{buildroot}%{_datadir}/tmp
 cd %{buildroot}%{_bindir}/..
 mkdir ./%{name}
-ls $(pwd)
+PWD=$(pwd)
 %define _fldir %(echo "$PWD")%{name}
 echo $(%{_fldir})
 install -Dm 0755 %{buildroot}%{_datadir}/tmp/bundle/%{name} %{_fldir}/%{name}
 mv %{buildroot}%{_datadir}/tmp/bundle/* ./%{name}
 #ln -s %{_fldir}/%{name} %{buildroot}%{_bindir}/tmp/%{name}
-cd %{bpath}
 #install -Dm 0755 %{buildroot}%{_bindir}/tmp/%{name} %{buildroot}%{_bindir}/%{name}
 rm -rf %{buildroot}%{_datadir}/tmp
 
