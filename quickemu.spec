@@ -3,7 +3,7 @@
 %define repoauth quickemu-project
 
 Name:    quickemu
-Version: 4.6
+Version: 4.7
 Release: 1%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
@@ -49,5 +49,7 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %{_bindir}/windowskey
 
 %changelog
+* Sun Apr 30 2023 James Flynn <ayoungdukie_copr@duk13.win> - 4.7-1
+- Update to quickemu-4.7
 * Sun Feb 19 2023 James Flynn <ayoungdukie_copr@duk13.win> - 4.6-1
 - Initial with quickemu-4.6
