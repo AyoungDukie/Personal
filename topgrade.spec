@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 11.0.2
+Version: 12.0.0
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
@@ -33,6 +33,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %changelog
 
 
+* Tue Jun 27 2023 James Flynn <ayoungdukie_copr@duk13.win> - 12.0.0-1
+- Update to topgrade-12.0.0
 * Tue Jun 27 2023 James Flynn <ayoungdukie_copr@duk13.win> - 11.0.2-1
 - Catchup update to topgrade-11.0.2
 * Tue Jun 27 2023 James Flynn <ayoungdukie_copr@duk13.win> - 11.0.1-1
