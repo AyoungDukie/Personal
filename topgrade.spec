@@ -1,14 +1,14 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 11.0.0
+Version: 11.0.1
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
 Group:   System Environment/Shells
 License: GPLv3
 URL:     https://github.com/topgrade-rs/%{name}
-Source0: https://github.com/topgrade-rs/%{name}/releases/download/v%{version}/%{name}-v%{version}-x86_64-unknown-linux-musl.tar.gz
+Source0: https://github.com/topgrade-rs/%{name}/releases/download/v%{version}/%{name}-v%{version}-x86_64-unknown-linux-gnu.tar.gz
 BuildRequires: cargo
 
 %description
@@ -32,6 +32,9 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %changelog
 
+
+* Tue Jun 27 2023 James Flynn <ayoungdukie_copr@duk13.win> - 11.0.1-1
+- Catchup update to topgrade-11.0.1
 * Tue Jun 27 2023 James Flynn <ayoungdukie_copr@duk13.win> - 11.0.0-1
 - Catchup update to topgrade-11.0.0
 * Sat Apr 1 2023 James Flynn <ayoungdukie_copr@duk13.win> - 10.3.3-1
