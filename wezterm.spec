@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 
-%define vtag 20230408-112425-69ae8472
+%define vtag 20230712-072601-f4abf8fd
 
 Name:    wezterm
 Version: %(echo "$(tr '-' '.' <<< %{vtag})")
@@ -54,6 +54,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/strip-ansi-escapes
 
 %changelog
+* Sun Aug 6 2023 James Flynn <ayoungdukie_copr@duk13.win> - 20230712.072601.f4abf8fd-1
+- Update to wezterm 20230712-072601-f4abf8fd 
 * Sun Aug 6 2023 James Flynn <ayoungdukie_copr@duk13.win> - 20230408.112425.69ae8472-1
 - Update to wezterm 20230408-112425-69ae8472 
 * Sun Aug 6 2023 James Flynn <ayoungdukie_copr@duk13.win> - 20230326.111934.3666303c-1
