@@ -53,7 +53,9 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.wezfurlong.wezter
 %{_bindir}/%{name}-mux-server
 %{_bindir}/strip-ansi-escapes
 
-%changelog 20220905-102802-7d4b8249 
+%changelog
+* Sun Aug 6 2023 James Flynn <ayoungdukie_copr@duk13.win> - 20230320.124340.559cb7b0-1
+- Update to wezterm 20230320-124340-559cb7b0 
 * Sat Dec 31 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20221119.145034.49b9839f-1
 - Update to wezterm 20221119-145034-49b9839f
 * Tue Sep 6 2022 James Flynn <ayoungdukie_copr@duk13.win> - 20220905.102802.7d4b8249-1
