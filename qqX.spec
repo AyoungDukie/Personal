@@ -23,11 +23,11 @@ mkdir -p ./_build/src/github.com/%{repoauth}
 ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 curl -LJO %{URL}/blob/{%version}/README.md
 
-
 %install
 # Prepare asset files
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{_datadir}/icons
+ls
 mv ./qqX.System/icons %{_datadir}/icons
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
