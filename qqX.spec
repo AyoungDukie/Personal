@@ -25,10 +25,10 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 
 %install
-mkdir -p ./icons
+# Prepare asset files
+mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{_datadir}/icons
-mv %{buildroot}%{_bindir}/qqX.System/icons ./icons
-cp ./icons %{_datadir}/icons
+mv ./qqX.System/icons %{_datadir}/icons
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
 install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_and_install
