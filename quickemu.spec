@@ -3,7 +3,7 @@
 %define repoauth quickemu-project
 
 Name:    quickemu
-Version: 4.7
+Version: 4.8
 Release: 1%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
@@ -13,6 +13,7 @@ URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires: git
 Requires: qemu,bash,coreutils,edk2-tools,grep,jq,lsb,procps,python3,genisoimage,usbutils,util-linux,sed,spice-gtk-tools,swtpm,wget,xdg-user-dirs,xrandr,unzip
+Recommends: aria2
 %description
 Quickly create and run highly optimised desktop virtual machines for Linux, macOS and Windows; with just two commands. You decide what operating system you want to run and Quickemu will figure out the best way to do it for you.
 
@@ -49,6 +50,8 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %{_bindir}/windowskey
 
 %changelog
+* Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.8-1
+- Update to quickemu-4.8
 * Sun Apr 30 2023 James Flynn <ayoungdukie_copr@duk13.win> - 4.7-1
 - Update to quickemu-4.7
 * Sun Feb 19 2023 James Flynn <ayoungdukie_copr@duk13.win> - 4.6-1
