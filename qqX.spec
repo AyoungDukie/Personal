@@ -11,6 +11,7 @@ Group:   Utilities/Virtual Machines
 License: GPLv3
 URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/releases/download/%{version}/%{name}-%{version}.tar.gz
+Prefix: /opt
 BuildRequires: desktop-file-utils
 Requires: quickemu
 
@@ -27,16 +28,17 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
-cp -r ./qqX.system/*  %{buildroot}%{_bindir}/%{name}/qqX.system/
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/%{name}
-install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}/%{name}_settings
-install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}/%{name}_setup_and_install
+# mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
+mkdir -p -m0755 %{buildroot}/opt/%{name}/qqX.system
+cp -r ./qqX.system/*  %{buildroot}/opt/%{name}/qqX.system/
+install -Dm 0755 %{name} %{buildroot}/opt/%{name}/%{name}
+install -Dm 0755 %{name}_settings %{buildroot}/opt/%{name}/%{name}_settings
+install -Dm 0755 %{name}_setup_and_install %{buildroot}/opt/%{name}/%{name}_setup_and_install
 
 %post
 if [ $1 -gt 1 ] ; then
-  ls
-  exec %{_bindir}/%{name}/%{name}_setup_and_install
+  export PATH=/opt/%{name}:$PATH
+  exec %{_bindir}/opt/%{name}_setup_and_install
 fi
 
 
