@@ -35,6 +35,7 @@ install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_
 
 %post
 if [ $1 -gt 1 ] ; then
+  ls
   exec %{_bindir}/%{name}_setup_and_install
 fi
 
