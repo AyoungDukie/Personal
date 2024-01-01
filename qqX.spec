@@ -27,16 +27,16 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-mkdir -p %{buildroot}%{_bindir}/qqX.system
-cp -r ./qqX.system/*  %{buildroot}%{_bindir}/qqX.system/
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
-install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
-install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_and_install
+mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
+cp -r ./qqX.system/*  %{buildroot}%{_bindir}/%{name}/qqX.system/
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/%{name}
+install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}/%{name}_settings
+install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}/%{name}_setup_and_install
 
 %post
 if [ $1 -gt 1 ] ; then
   ls
-  exec %{_bindir}/%{name}_setup_and_install
+  exec %{_bindir}/%{name}/%{name}_setup_and_install
 fi
 
 
@@ -45,11 +45,11 @@ fi
 %doc README.md
 %license LICENSE
 %doc LICENSE.Addendum.txt
-%{_bindir}/%{name}
-%{_bindir}/%{name}_settings
-%{_bindir}/%{name}_setup_and_install
-%{_bindir}/qqX.system/*
+%{_bindir}/%{name}/%{name}
+%{_bindir}/%{name}/%{name}_settings
+%{_bindir}/%{name}/%{name}_setup_and_install
+%{_bindir}/%{name}/qqX.system/*
 
 %changelog
-* Sun Dec 31 2023 James Flynn <ayoungdukie_copr@duk13.win> - 1.4.01-1
+* Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 1.4.01-1
 - Initial with qqX 1.4.01
