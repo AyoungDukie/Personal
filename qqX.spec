@@ -37,7 +37,7 @@ install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}/%{name
 %post
 if [ $1 -gt 1 ] ; then
   export PATH= %{buildroot}%{_bindir}/%{name}:$PATH
-  exec %{_bindir}%{name}/%{name}_setup_and_install
+  exec %{buildroot}%{_bindir}/%{name}/%{name}_setup_and_install
 fi
 
 
