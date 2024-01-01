@@ -27,7 +27,7 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_bindir}/qqX.system
 cp -r ./qqX.system  %{_bindir}/
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
