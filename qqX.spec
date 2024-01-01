@@ -43,7 +43,7 @@ install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_
 %{_bindir}/%{name}
 %{_bindir}/%{name}_settings
 %{_bindir}/%{name}_setup_and_install
-%{_bindir}/qqX.system
+%{_bindir}/qqX.system/*
 
 %changelog
 * Sun Dec 31 2023 James Flynn <ayoungdukie_copr@duk13.win> - 1.4.01-1
