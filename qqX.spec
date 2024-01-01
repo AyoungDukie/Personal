@@ -34,7 +34,10 @@ install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
 install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_and_install
 
 %post
-%{_bindir}/%{name}_setup_and_install
+if [ $1 -gt 1 ] ; then
+  exec %{_bindir}/%{name}_setup_and_install
+fi
+
 
 %files
 %defattr(-,root,root,-)
