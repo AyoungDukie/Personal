@@ -27,12 +27,12 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-# mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
-mkdir -p -m0755 %{buildroot}%{name}/%{name}/qqX.system
+mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
+# mkdir -p -m0755 %{buildroot}%{name}/%{name}/qqX.system
 cp -r ./qqX.system/*  %{buildroot}%{name}/%{name}/qqX.system/
-install -Dm 0755 %{name} %{buildroot}%{name}/%{name}/%{name}
-install -Dm 0755 %{name}_settings %{buildroot}%{name}/%{name}/%{name}_settings
-install -Dm 0755 %{name}_setup_and_install %{buildroot}%{name}/%{name}/%{name}_setup_and_install
+install -Dm 0755 %{name} %{buildroot}%{name}/%{name}
+install -Dm 0755 %{name}_settings %{buildroot}%{name}/%{name}_settings
+install -Dm 0755 %{name}_setup_and_install %{buildroot}%{name}/%{name}_setup_and_install
 
 %post
 if [ $1 -gt 1 ] ; then
