@@ -27,9 +27,9 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-mkdir -p %{buildroot}%{_bindir}/qqX.system
-# mkdir -p -m0755 %{buildroot}%{name}/%{name}/qqX.system
-cp -r ./qqX.system/*  %{buildroot}%{_bindir}/qqX.system/
+mkdir -p %{buildroot}%{_bindir}/%{name}.system
+# mkdir -p -m0755 %{buildroot}%{name}/%{name}/%{name}.system
+cp -r ./qqX.system/*  %{buildroot}%{_bindir}/%{name}.system/
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
 install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_and_install
@@ -47,10 +47,10 @@ fi
 %doc README.md
 %license LICENSE
 %doc LICENSE.Addendum.txt
-%{_bindir}/%{name}/%{name}
-%{_bindir}/%{name}/%{name}_settings
-%{_bindir}/%{name}/%{name}_setup_and_install
-%{_bindir}/%{name}/qqX.system/*
+%{_bindir}/%{name}
+%{_bindir}/%{name}_settings
+%{_bindir}/%{name}_setup_and_install
+%{_bindir}/%{name}.system/*
 
 %changelog
 * Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 1.4.01-1
