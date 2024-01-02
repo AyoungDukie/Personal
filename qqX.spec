@@ -27,16 +27,16 @@ curl -LJO %{URL}/blob/{%version}/README.md
 
 %install
 # Prepare asset files
-mkdir -p %{buildroot}%{_bindir}/%{name}/qqX.system
+mkdir -p %{buildroot}%{_bindir}/qqX.system
 # mkdir -p -m0755 %{buildroot}%{name}/%{name}/qqX.system
-cp -r ./qqX.system/*  %{buildroot}%{_bindir}/%{name}/qqX.system/
-install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}/%{name}
-install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}/%{name}_settings
-install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}/%{name}_setup_and_install
+cp -r ./qqX.system/*  %{buildroot}%{_bindir}/qqX.system/
+install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 %{name}_settings %{buildroot}%{_bindir}/%{name}_settings
+install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_and_install
 
 %post
 if [ $1 -gt 1 ] ; then
-  export PATH=%{buildroot}%{_bindir}/%{name}:$PATH
+  #export PATH=%{buildroot}%{_bindir}/%{name}:$PATH
   export qqX_Std_Bin_Dir=%{buildroot}%{_bindir}/%{name}/
   exec %{buildroot}%{_bindir}/%{name}/%{name}_setup_and_install
 fi
