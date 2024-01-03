@@ -36,8 +36,8 @@ install -Dm 0755 %{name}_setup_and_install %{buildroot}%{_bindir}/%{name}_setup_
 
 %post
 if [ $1 -gt 1 ] ; then
-  #export PATH=%{buildroot}%{_bindir}/%{name}:$PATH
-  #export qqX_Std_Bin_Dir=%{buildroot}%{_bindir}/%{name}/
+  export PATH=%{_bindir}/%{name}:$PATH
+  export qqX_Std_Bin_Dir=%{_bindir}/%{name}
   exec %{_bindir}/%{name}_setup_and_install
 fi
 
