@@ -4,7 +4,7 @@
 
 Name:    quickemu
 Version: 4.9.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
 Group:   System Environment/Shells
@@ -13,7 +13,7 @@ URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires: git
 Requires: qemu,bash,coreutils,edk2-tools,grep,jq,lsb,procps,python3,genisoimage,usbutils,util-linux,sed,spice-gtk-tools,swtpm,wget,xdg-user-dirs,xrandr,unzip
-Recommends: aria2
+Recommends: aria2,zsync
 %description
 Quickly create and run highly optimised desktop virtual machines for Linux, macOS and Windows; with just two commands. You decide what operating system you want to run and Quickemu will figure out the best way to do it for you.
 
@@ -50,6 +50,8 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %{_bindir}/windowskey
 
 %changelog
+* Wed Jan 3 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.2-2
+- Add zsync reccomendation (e.g. from RPMSphere)
 * Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.2-1
 - Update to quickemu-4.9.2
 * Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.1-1
