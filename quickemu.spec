@@ -3,8 +3,8 @@
 %define repoauth quickemu-project
 
 Name:    quickemu
-Version: 4.9.4
-Release: 1%{?dist}
+Version: 4.9.3
+Release: 2%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
 Group:   System Environment/Shells
@@ -31,7 +31,7 @@ ln -s $(pwd) ./_build/src/github.com/%{repoauth}/%{name}
 mkdir -p %{buildroot}%{_bindir}
 install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 install -Dm 0755 quickget %{buildroot}%{_bindir}/quickget
-install -Dm 0755 chunkcheck %{buildroot}%{_bindir}/quickreport
+install -Dm 0755 quickreport %{buildroot}%{_bindir}/quickreport
 install -Dm 0755 chunkcheck %{buildroot}%{_bindir}/chunkcheck
 install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 
@@ -57,8 +57,8 @@ fi
 %{_bindir}/windowskey
 
 %changelog
-* Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.4-1
-- Update to quickemu-4.9.4
+* Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.3-2
+- Update to quickemu-4.9.3 fix binary naming issue
 * Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.3-1
 - Update to quickemu-4.9.3 (+quickreport, +chunkcheck, -macrecovery)
 * Wed Jan 3 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.2-2
