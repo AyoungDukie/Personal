@@ -3,8 +3,8 @@
 %define repoauth quickemu-project
 
 Name:    quickemu
-Version: 4.9.2
-Release: 2%{?dist}
+Version: 4.9.3
+Release: 1%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
 Group:   System Environment/Shells
@@ -50,6 +50,8 @@ install -Dm 0755 windowskey %{buildroot}%{_bindir}/windowskey
 %{_bindir}/windowskey
 
 %changelog
+* Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.3-1
+- Update to quickemu-4.9.3
 * Wed Jan 3 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.2-2
 - Add zsync reccomendation (e.g. from RPMSphere)
 * Mon Jan 1 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.2-1
