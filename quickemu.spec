@@ -3,8 +3,8 @@
 %define repoauth quickemu-project
 
 Name:    quickemu
-Version: 4.9.4
-Release: 2%{?dist}
+Version: 4.9.5
+Release: 1%{?dist}
 Summary: quickemu - Quickly create and run optimised Windows, macOS and Linux desktop virtual machines.
 
 Group:   System Environment/Shells
@@ -12,7 +12,7 @@ License: MIT
 URL:     https://github.com/%{repoauth}/%{name}
 Source0: https://github.com/%{repoauth}/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires: git
-Requires: qemu,bash,coreutils,edk2-tools,grep,jq,lsb,procps,python3,genisoimage,usbutils,util-linux,sed,spice-gtk-tools,swtpm,wget,xdg-user-dirs,xrandr,unzip
+Requires: qemu,bash,coreutils,edk2-tools,grep,jq,lsb,procps,python3,genisoimage,usbutils,util-linux,sed,spice-gtk-tools,swtpm,wget,xdg-user-dirs,xrandr,unzip,pciutils
 Recommends: aria2,zsync
 %description
 Quickly create and run highly optimised desktop virtual machines for Linux, macOS and Windows; with just two commands. You decide what operating system you want to run and Quickemu will figure out the best way to do it for you.
@@ -57,6 +57,8 @@ fi
 %{_bindir}/windowskey
 
 %changelog
+* Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.5-1
+- Update to quickemu-4.9.5
 * Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.4-2
 - Update to quickemu-4.9.4 fix binary naming issue
 * Sun Jul 7 2024 James Flynn <ayoungdukie_copr@duk13.win> - 4.9.3-2
