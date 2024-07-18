@@ -92,5 +92,5 @@ install -Dm644 %app_id.metainfo.xml %{buildroot}%{_metainfodir}/%app_id.metainfo
 %license assets/licenses.md
 
 %changelog
-* Mon Jul 18 2024 James Flynn <ayoungdukie_copr@duk13.win> - 0.143.6-1
+* Thu Jul 18 2024 James Flynn <ayoungdukie_copr@duk13.win> - 0.143.6-1
 - Initial package with zed-0.143.6
