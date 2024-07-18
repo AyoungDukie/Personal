@@ -19,9 +19,8 @@ Conflicts:      zed
 Provides:       zed
 
 BuildRequires:  cargo-rpm-macros >= 24
-BuildRequires:  anda-srpm-macros
 BuildRequires:  gcc
-BuildRequires:  g++
+BuildRequires:  gcc-c++
 BuildRequires:  clang
 BuildRequires:  mold
 BuildRequires:  alsa-lib-devel
@@ -30,6 +29,7 @@ BuildRequires:  wayland-devel
 BuildRequires:  libxkbcommon-x11-devel
 BuildRequires:  openssl-devel
 BuildRequires:  libzstd-devel
+    # Perl dependencies are needed for openssl-sys crate see https://docs.rs/openssl/latest/openssl/
 BuildRequires:  perl-FindBin
 BuildRequires:  perl-IPC-Cmd
 BuildRequires:  perl-File-Compare
@@ -37,6 +37,8 @@ BuildRequires:  perl-File-Copy
 BuildRequires:  perl-lib
 BuildRequires:  vulkan-loader
 BuildRequires:  libcurl-devel
+BuildRequires:  libgit2-devel
+BuildRequires:  sqlite-devel
 
 %description
 Code at the speed of thought - Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
@@ -90,5 +92,5 @@ install -Dm644 %app_id.metainfo.xml %{buildroot}%{_metainfodir}/%app_id.metainfo
 %license assets/licenses.md
 
 %changelog
-* Sat Jul 13 2024 James Flynn <ayoungdukie_copr@duk13.win> - 0.143.6-1
+* Mon Jul 18 2024 James Flynn <ayoungdukie_copr@duk13.win> - 0.143.6-1
 - Initial package with zed-0.143.6
