@@ -27,7 +27,7 @@ BuildRequires:  alsa-lib-devel
 BuildRequires:  fontconfig-devel
 BuildRequires:  wayland-devel
 BuildRequires:  libxkbcommon-x11-devel
-BuildRequires:  openssl-devel
+BuildRequires:  openssl-devel-engine
 BuildRequires:  libzstd-devel
     # Perl dependencies are needed for openssl-sys crate see https://docs.rs/openssl/latest/openssl/
 BuildRequires:  perl-FindBin
@@ -52,6 +52,8 @@ export APP_ID="%app_id"
 export APP_ICON="%app_id"
 export APP_NAME="Zed Editor"
 export APP_CLI="zed"
+export APP="%{_libexecdir}/zed-editor"
+export APP_ARGS="%U"
 export ZED_UPDATE_EXPLANATION="Run dnf up to update Zed."
 export ZED_RELEASE_CHANNEL=stable
 export BRANDING_LIGHT="#e9aa6a"
