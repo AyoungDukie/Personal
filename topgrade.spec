@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    topgrade
-Version: 16.9.0
+Version: 17.0.0
 Release: 1%{?dist}
 Summary: Topgrade - Invoke the upgrade procedure of multiple package managers
 
@@ -31,6 +31,8 @@ install -Dm 0755 %{name} %{buildroot}%{_bindir}/%{name}
 %{_bindir}/%{name}
 
 %changelog
+* Thu Mar 12 2026 James Flynn <ayoungdukie_copr@duk13.win> - 17.0.0-1
+- Update to topgrade-17.0.0
 * Tue Feb 3 2026 James Flynn <ayoungdukie_copr@duk13.win> - 16.9.0-1
 - Update to topgrade-16.9.0
 * Sun Jan 11 2026 James Flynn <ayoungdukie_copr@duk13.win> - 16.8.0-1
